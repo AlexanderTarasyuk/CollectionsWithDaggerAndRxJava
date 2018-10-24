@@ -25,7 +25,7 @@ public final class MapPresenterImpl implements Contract.MapPresenter {
     }
 
     public MapPresenterImpl() {
-        DaggerModelComponent.builder().build();
+        DaggerModelComponent.builder().build().inject(this);
 
     }
 

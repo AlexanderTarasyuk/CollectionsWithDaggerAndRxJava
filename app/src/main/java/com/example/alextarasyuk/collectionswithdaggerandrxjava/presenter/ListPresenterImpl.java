@@ -28,7 +28,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     private List<Integer> writeOnWriteLinkedList;
 
     public ListPresenterImpl() {
-        DaggerModelComponent.builder().build();
+        DaggerModelComponent.builder().build().inject(this);
 
 
     }

@@ -2,14 +2,13 @@ package com.example.alextarasyuk.collectionswithdaggerandrxjava.model;
 
 import java.util.List;
 
-import io.reactivex.BackpressureStrategy;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 
 public class ObservableListModel<T> {
 
-    protected final List<T> list;
-    protected final BehaviorSubject<List<T>> behaviorSubject;
+    protected  List<T> list;
+    protected  BehaviorSubject<List<T>> behaviorSubject;
 
     public ObservableListModel(List<T> list) {
         this.list = list;

@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutionException;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public final class MapDaoImpl implements Contract.MapDao {
@@ -26,13 +27,14 @@ public final class MapDaoImpl implements Contract.MapDao {
     public String calculateAddNewElementToMap(Map<Integer, Integer> map)  {
         long temp = System.nanoTime();
         ObservableMapModel<Integer, Integer> observableMapModel = new ObservableMapModel<>(map);
-        observableMapModel.getObservable()
+        Disposable disposable=observableMapModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe()
         ;
         observableMapModel.addElement(1, 1);
+        disposable.dispose();
         return String.valueOf(System.nanoTime() - temp);
     }
 
@@ -40,13 +42,14 @@ public final class MapDaoImpl implements Contract.MapDao {
     public String calculateFindElementInMapByKey(Map<Integer, Integer> map)  {
         long temp = System.nanoTime();
         ObservableMapModel<Integer, Integer> observableMapModel = new ObservableMapModel<>(map);
-        observableMapModel.getObservable()
+        Disposable disposable=observableMapModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe()
         ;
         observableMapModel.getIndexOfElementList(1);
+        disposable.dispose();
         return String.valueOf(System.nanoTime() - temp);
     }
 
@@ -54,13 +57,14 @@ public final class MapDaoImpl implements Contract.MapDao {
     public String calculateRemoveElementInMapByKey(Map<Integer, Integer> map)  {
         long temp = System.nanoTime();
         ObservableMapModel<Integer, Integer> observableMapModel = new ObservableMapModel<>(map);
-        observableMapModel.getObservable()
+        Disposable disposable=observableMapModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe()
         ;
         observableMapModel.removeElement(2);
+        disposable.dispose();
         return String.valueOf(System.nanoTime() - temp);
     }
 

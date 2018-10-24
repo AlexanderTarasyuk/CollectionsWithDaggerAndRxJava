@@ -13,6 +13,7 @@ import com.example.alextarasyuk.collectionswithdaggerandrxjava.BuildConfig;
 import com.example.alextarasyuk.collectionswithdaggerandrxjava.R;
 import com.example.alextarasyuk.collectionswithdaggerandrxjava.contract.Contract;
 import com.example.alextarasyuk.collectionswithdaggerandrxjava.di.DaggerModelComponent;
+import com.example.alextarasyuk.collectionswithdaggerandrxjava.di.DaggerPresenterComponent;
 
 import javax.inject.Inject;
 
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         setContentView(R.layout.activity_main);
         unbinder = ButterKnife.bind(this);
 
-        DaggerModelComponent.builder().build();
+        DaggerPresenterComponent.builder().build().inject(this);
 
         listPresenter.attachView(this);
         mapPresenter.attachView(this);

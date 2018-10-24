@@ -1,7 +1,6 @@
 package com.example.alextarasyuk.collectionswithdaggerandrxjava.dao;
 
 
-
 import com.example.alextarasyuk.collectionswithdaggerandrxjava.Utils;
 import com.example.alextarasyuk.collectionswithdaggerandrxjava.contract.Contract;
 import com.example.alextarasyuk.collectionswithdaggerandrxjava.model.ObservableListModel;
@@ -12,6 +11,7 @@ import java.util.concurrent.ExecutionException;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public final class ListDaoImpl implements Contract.ListDao {
@@ -23,17 +23,18 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateInsertAtTheBeginning(List<Integer> list)  {
+    public String calculateInsertAtTheBeginning(List<Integer> list) {
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
-        observableListModel.getObservable()
+        Disposable disposable = observableListModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
-                .subscribe()
-        ;
+                .subscribe();
         observableListModel.addElement(1, 1);
+
+        disposable.dispose();
 
         return String.valueOf(System.nanoTime() - temp);
 
@@ -42,34 +43,37 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateInsertAtTheMiddle(List<Integer> list)  {
+    public String calculateInsertAtTheMiddle(List<Integer> list) {
 
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
-        observableListModel.getObservable()
+        Disposable disposable = observableListModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
         observableListModel.addElement(list.size() / 2, 1);
 
+        disposable.dispose();
+
         return String.valueOf(System.nanoTime() - temp);
     }
 
 
     @Override
-    public String calculateInsertAtTheEnd(List<Integer> list)  {
+    public String calculateInsertAtTheEnd(List<Integer> list) {
 
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
-        observableListModel.getObservable()
+        Disposable disposable=observableListModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
         observableListModel.addElement(list.size() - 1, 1);
+        disposable.dispose();
 
         return String.valueOf(System.nanoTime() - temp);
 
@@ -77,65 +81,72 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateFindTheIndexOfElement(List<Integer> list)  {
+    public String calculateFindTheIndexOfElement(List<Integer> list) {
 
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
-        observableListModel.getObservable()
+        Disposable disposable=observableListModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
         observableListModel.getIndexOfElementList(100);
+        disposable.dispose();
 
         return String.valueOf(System.nanoTime() - temp);
     }
 
 
     @Override
-    public String calculateRemoveFirstElement(List<Integer> list)  {
+    public String calculateRemoveFirstElement(List<Integer> list) {
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
-        observableListModel.getObservable()
+        Disposable disposable=observableListModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
         observableListModel.removeElement(0);
 
+        disposable.dispose();
+
         return String.valueOf(System.nanoTime() - temp);
     }
 
 
     @Override
-    public String calculateRemoveMiddleElementArrayList(List<Integer> list)  {
+    public String calculateRemoveMiddleElementArrayList(List<Integer> list) {
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
-        observableListModel.getObservable()
+        Disposable disposable=observableListModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
         observableListModel.removeElement(list.size() / 2);
 
+        disposable.dispose();
+
         return String.valueOf(System.nanoTime() - temp);
     }
 
 
     @Override
-    public String calculateRemoveLastElement(List<Integer> list)  {
+    public String calculateRemoveLastElement(List<Integer> list) {
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
-        observableListModel.getObservable()
+        Disposable disposable=observableListModel.getObservable()
                 .subscribeOn(Schedulers.from(Utils.getExecutorService()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
         observableListModel.removeElement(list.size() - 1);
+
+        disposable.dispose();
 
         return String.valueOf(System.nanoTime() - temp);
     }
