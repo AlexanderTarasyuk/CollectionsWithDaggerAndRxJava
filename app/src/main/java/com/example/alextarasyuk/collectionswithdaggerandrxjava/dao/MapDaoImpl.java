@@ -23,7 +23,7 @@ public final class MapDaoImpl implements Contract.MapDao {
 
 
     @Override
-    public String calculateAddNewElementToMap(Map<Integer, Integer> map) throws ExecutionException, InterruptedException {
+    public String calculateAddNewElementToMap(Map<Integer, Integer> map)  {
         long temp = System.nanoTime();
         ObservableMapModel<Integer, Integer> observableMapModel = new ObservableMapModel<>(map);
         observableMapModel.getObservable()
@@ -37,7 +37,7 @@ public final class MapDaoImpl implements Contract.MapDao {
     }
 
     @Override
-    public String calculateFindElementInMapByKey(Map<Integer, Integer> map) throws ExecutionException, InterruptedException {
+    public String calculateFindElementInMapByKey(Map<Integer, Integer> map)  {
         long temp = System.nanoTime();
         ObservableMapModel<Integer, Integer> observableMapModel = new ObservableMapModel<>(map);
         observableMapModel.getObservable()
@@ -51,7 +51,7 @@ public final class MapDaoImpl implements Contract.MapDao {
     }
 
     @Override
-    public String calculateRemoveElementInMapByKey(Map<Integer, Integer> map) throws ExecutionException, InterruptedException {
+    public String calculateRemoveElementInMapByKey(Map<Integer, Integer> map)  {
         long temp = System.nanoTime();
         ObservableMapModel<Integer, Integer> observableMapModel = new ObservableMapModel<>(map);
         observableMapModel.getObservable()

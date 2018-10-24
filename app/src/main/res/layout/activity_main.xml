@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/fragment_collections"
-        android:name="com.example.alextarasyuk.collectionsandmaps.view.ListFragment"
+        android:name="com.example.alextarasyuk.collectionswithdaggerandrxjava.view.ListFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/fragment_maps"
-        android:name="com.example.alextarasyuk.collectionsandmaps.view.MapFragment"
+        android:name="com.example.alextarasyuk.collectionswithdaggerandrxjava.view.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -44,8 +44,8 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/btn_calculate"

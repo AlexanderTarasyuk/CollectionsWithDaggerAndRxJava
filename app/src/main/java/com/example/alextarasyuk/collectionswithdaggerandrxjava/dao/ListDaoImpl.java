@@ -23,7 +23,7 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateInsertAtTheBeginning(List<Integer> list) throws ExecutionException, InterruptedException {
+    public String calculateInsertAtTheBeginning(List<Integer> list)  {
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
@@ -42,7 +42,7 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateInsertAtTheMiddle(List<Integer> list) throws ExecutionException, InterruptedException {
+    public String calculateInsertAtTheMiddle(List<Integer> list)  {
 
         long temp = System.nanoTime();
 
@@ -59,7 +59,7 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateInsertAtTheEnd(List<Integer> list) throws ExecutionException, InterruptedException {
+    public String calculateInsertAtTheEnd(List<Integer> list)  {
 
         long temp = System.nanoTime();
 
@@ -77,7 +77,7 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateFindTheIndexOfElement(List<Integer> list) throws ExecutionException, InterruptedException {
+    public String calculateFindTheIndexOfElement(List<Integer> list)  {
 
         long temp = System.nanoTime();
 
@@ -94,7 +94,7 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateRemoveFirstElement(List<Integer> list) throws ExecutionException, InterruptedException {
+    public String calculateRemoveFirstElement(List<Integer> list)  {
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
@@ -110,7 +110,7 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateRemoveMiddleElementArrayList(List<Integer> list) throws ExecutionException, InterruptedException {
+    public String calculateRemoveMiddleElementArrayList(List<Integer> list)  {
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
@@ -126,7 +126,7 @@ public final class ListDaoImpl implements Contract.ListDao {
 
 
     @Override
-    public String calculateRemoveLastElement(List<Integer> list) throws ExecutionException, InterruptedException {
+    public String calculateRemoveLastElement(List<Integer> list)  {
         long temp = System.nanoTime();
 
         ObservableListModel<Integer> observableListModel = new ObservableListModel<>(list);
