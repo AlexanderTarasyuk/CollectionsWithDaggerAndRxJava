@@ -32,72 +32,42 @@ public final class MapPresenterImpl implements Contract.MapPresenter {
 
     @Override
     public void calculateAddNewElementToHashMap() {
-        try {
+
             view.setAddNewInHashMap(mapDao.calculateAddNewElementToMap(hashMap));
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
     }
 
     @Override
     public void calculateFindElementInHashMapByKey() {
-        try {
             view.setSelectInHashMap(mapDao.calculateFindElementInMapByKey(hashMap));
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
     }
 
     @Override
     public void calculateRemoveElementInHashMapByKey() {
-        try {
+
             view.setRemoveInHashMap(mapDao.calculateRemoveElementInMapByKey(hashMap));
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
     public void calculateAddNewElementToTreeMap() {
-        try {
+
             view.setAddNewInTreeMap(mapDao.calculateAddNewElementToMap(treeMap));
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
     }
 
     @Override
     public void calculateFindElementInTreeMapByKey() {
 
-        try {
             view.setSelectInTreeMap(mapDao.calculateFindElementInMapByKey(treeMap));
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override
     public void calculateRemoveElementInTreeMapByKey() {
-        try {
+
             view.setRemoveInTreeMap(mapDao.calculateRemoveElementInMapByKey(treeMap));
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Override

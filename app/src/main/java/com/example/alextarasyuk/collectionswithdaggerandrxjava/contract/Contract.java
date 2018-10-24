@@ -144,19 +144,19 @@ public interface Contract {
     }
 
     interface ListDao {
-        String calculateInsertAtTheBeginning(List<Integer> list) throws ExecutionException, InterruptedException;
+        String calculateInsertAtTheBeginning(List<Integer> list);
 
-        String calculateInsertAtTheMiddle(List<Integer> list) throws ExecutionException, InterruptedException;
+        String calculateInsertAtTheMiddle(List<Integer> list);
 
-        String calculateInsertAtTheEnd(List<Integer> list) throws ExecutionException, InterruptedException;
+        String calculateInsertAtTheEnd(List<Integer> list);
 
-        String calculateFindTheIndexOfElement(List<Integer> list) throws ExecutionException, InterruptedException;
+        String calculateFindTheIndexOfElement(List<Integer> list);
 
-        String calculateRemoveFirstElement(List<Integer> list) throws ExecutionException, InterruptedException;
+        String calculateRemoveFirstElement(List<Integer> list);
 
-        String calculateRemoveMiddleElementArrayList(List<Integer> list) throws ExecutionException, InterruptedException;
+        String calculateRemoveMiddleElementArrayList(List<Integer> list);
 
-        String calculateRemoveLastElement(List<Integer> list) throws ExecutionException, InterruptedException;
+        String calculateRemoveLastElement(List<Integer> list);
 
 
     }
@@ -164,10 +164,10 @@ public interface Contract {
 
     interface MapDao {
 
-        String calculateAddNewElementToMap(Map<Integer, Integer> treeMap) throws ExecutionException, InterruptedException;
+        String calculateAddNewElementToMap(Map<Integer, Integer> treeMap);
 
-        String calculateFindElementInMapByKey(Map<Integer, Integer> treeMap) throws ExecutionException, InterruptedException;
+        String calculateFindElementInMapByKey(Map<Integer, Integer> treeMap);
 
-        String calculateRemoveElementInMapByKey(Map<Integer, Integer> treeMap) throws ExecutionException, InterruptedException;
+        String calculateRemoveElementInMapByKey(Map<Integer, Integer> treeMap);
     }
 }
