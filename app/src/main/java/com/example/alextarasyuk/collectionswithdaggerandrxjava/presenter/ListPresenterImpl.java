@@ -1,8 +1,6 @@
 package com.example.alextarasyuk.collectionswithdaggerandrxjava.presenter;
 
 
-
-
 import com.example.alextarasyuk.collectionswithdaggerandrxjava.contract.Contract;
 import com.example.alextarasyuk.collectionswithdaggerandrxjava.di.DaggerModelComponent;
 
@@ -42,7 +40,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvInsertAtBeginningArrayList() {
         if (view != null & model != null) {
 
-                view.setTvInsertAtBeginningArrayList(model.calculateInsertAtTheBeginning(arrayList));
+            view.setTvInsertAtBeginningArrayList(model.calculateInsertAtTheBeginning(arrayList));
 
         }
     }
@@ -51,7 +49,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvInsertAtMiddleArrayList() {
         if (view != null & model != null) {
 
-                view.setTvInsertAtMiddleArrayList(model.calculateInsertAtTheMiddle(arrayList));
+            view.setTvInsertAtMiddleArrayList(model.calculateInsertAtTheMiddle(arrayList));
 
         }
     }
@@ -60,7 +58,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvInsertAtEndArrayList() {
         if (view != null & model != null) {
 
-                view.setTvInsertAtEndArrayList(model.calculateInsertAtTheEnd(arrayList));
+            view.setTvInsertAtEndArrayList(model.calculateInsertAtTheEnd(arrayList));
 
         }
     }
@@ -70,7 +68,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvFindElementArrayList() {
         if (view != null & model != null) {
 
-                view.setTvFindElementArrayList(model.calculateFindTheIndexOfElement(arrayList));
+            view.setTvFindElementArrayList(model.calculateFindTheIndexOfElement(arrayList));
 
         }
     }
@@ -79,7 +77,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteFirstArrayList() {
         if (view != null & model != null) {
 
-                view.setTvDeleteFirstArrayList(model.calculateRemoveFirstElement(arrayList));
+            view.setTvDeleteFirstArrayList(model.calculateRemoveFirstElement(arrayList));
 
         }
     }
@@ -88,7 +86,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteMiddle() {
         if (view != null & model != null) {
 
-                view.setTvDeleteMiddle(model.calculateRemoveMiddleElementArrayList(arrayList));
+            view.setTvDeleteMiddle(model.calculateRemoveMiddleElementArrayList(arrayList));
 
         }
     }
@@ -97,7 +95,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteLastElementArrayList() {
         if (view != null & model != null) {
 
-                view.setTvDeleteLastElementArrayList(model.calculateRemoveLastElement(arrayList));
+            view.setTvDeleteLastElementArrayList(model.calculateRemoveLastElement(arrayList));
 
         }
     }
@@ -106,7 +104,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvInsertAtBeginningLinkedList() {
         if (view != null & model != null) {
 
-                view.setTvInsertAtBeginningLinkedList(model.calculateInsertAtTheBeginning(linkedList));
+            view.setTvInsertAtBeginningLinkedList(model.calculateInsertAtTheBeginning(linkedList));
 
         }
     }
@@ -114,7 +112,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     @Override
     public void setTvInsertAtMiddleLinkList() {
         if (view != null & model != null) {
-                view.setTvInsertAtMiddleLinkList(model.calculateInsertAtTheMiddle(linkedList));
+            view.setTvInsertAtMiddleLinkList(model.calculateInsertAtTheMiddle(linkedList));
         }
     }
 
@@ -130,7 +128,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvFindElementLinkList() {
         if (view != null & model != null) {
 
-                view.setTvFindElementLinkList(model.calculateFindTheIndexOfElement(linkedList));
+            view.setTvFindElementLinkList(model.calculateFindTheIndexOfElement(linkedList));
         }
     }
 
@@ -138,7 +136,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteFirstLinkList() {
         if (view != null & model != null) {
 
-                view.setTvDeleteFirstLinkList(model.calculateRemoveFirstElement(linkedList));
+            view.setTvDeleteFirstLinkList(model.calculateRemoveFirstElement(linkedList));
 
         }
     }
@@ -147,7 +145,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteMiddleLinkList() {
         if (view != null & model != null) {
 
-                view.setTvDeleteMiddleLinkList(model.calculateRemoveMiddleElementArrayList(linkedList));
+            view.setTvDeleteMiddleLinkList(model.calculateRemoveMiddleElementArrayList(linkedList));
 
         }
     }
@@ -156,7 +154,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteLastLinkList() {
         if (view != null & model != null) {
 
-                view.setTvDeleteLastLinkList(model.calculateRemoveLastElement(linkedList));
+            view.setTvDeleteLastLinkList(model.calculateRemoveLastElement(linkedList));
 
         }
     }
@@ -165,7 +163,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvInsertAtBeginningCopyOnWriteList() {
         if (view != null & model != null) {
 
-                view.setTvInsertAtBeginningCopyOnWriteList(model.calculateInsertAtTheBeginning(writeOnWriteLinkedList));
+            view.setTvInsertAtBeginningCopyOnWriteList(model.calculateInsertAtTheBeginning(writeOnWriteLinkedList));
 
         }
 
@@ -175,7 +173,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvInsertAtMiddleCopyOnWriteList() {
         if (view != null & model != null) {
 
-                view.setTvInsertAtMiddleCopyOnWriteList(model.calculateInsertAtTheMiddle(writeOnWriteLinkedList));
+            view.setTvInsertAtMiddleCopyOnWriteList(model.calculateInsertAtTheMiddle(writeOnWriteLinkedList));
 
         }
 
@@ -185,7 +183,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvInsertAtEndCopyOnWriteList() {
         if (view != null & model != null) {
 
-                view.setTvInsertAtEndCopyOnWriteList(model.calculateInsertAtTheEnd(writeOnWriteLinkedList));
+            view.setTvInsertAtEndCopyOnWriteList(model.calculateInsertAtTheEnd(writeOnWriteLinkedList));
 
         }
     }
@@ -194,7 +192,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvFindElementCopyOnWriteList() {
         if (view != null & model != null) {
 
-                view.setTvFindElementCopyOnWriteList(model.calculateFindTheIndexOfElement(writeOnWriteLinkedList));
+            view.setTvFindElementCopyOnWriteList(model.calculateFindTheIndexOfElement(writeOnWriteLinkedList));
 
         }
     }
@@ -203,7 +201,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteFirstCopyOnWriteList() {
         if (view != null & model != null) {
 
-                view.setTvDeleteFirstCopyOnWriteList(model.calculateRemoveFirstElement(writeOnWriteLinkedList));
+            view.setTvDeleteFirstCopyOnWriteList(model.calculateRemoveFirstElement(writeOnWriteLinkedList));
 
         }
 
@@ -213,7 +211,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteMiddleCopyOnWriteList() {
         if (view != null & model != null) {
 
-                view.setTvDeleteMiddleCopyOnWriteList(model.calculateRemoveMiddleElementArrayList(writeOnWriteLinkedList));
+            view.setTvDeleteMiddleCopyOnWriteList(model.calculateRemoveMiddleElementArrayList(writeOnWriteLinkedList));
 
         }
 
@@ -223,7 +221,7 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     public void setTvDeleteLastCopyOnWriteList() {
         if (view != null & model != null) {
 
-                view.setTvDeleteLastCopyOnWriteList(model.calculateRemoveMiddleElementArrayList(writeOnWriteLinkedList));
+            view.setTvDeleteLastCopyOnWriteList(model.calculateRemoveMiddleElementArrayList(writeOnWriteLinkedList));
 
         }
 
@@ -256,7 +254,6 @@ public final class ListPresenterImpl implements Contract.ListPresenter {
     @Override
     public void attachView(Contract.View view) {
         this.view = view;
-
 
 
     }

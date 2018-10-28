@@ -54,14 +54,16 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
         listPresenter.attachView(this);
         mapPresenter.attachView(this);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                listPresenter.initialzeList(Integer.valueOf(editText.getText().toString()));
-                mapPresenter.initializeMap(Integer.valueOf(editText.getText().toString()));
+        synchronized (MainActivity.class) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    listPresenter.initialzeList(Integer.valueOf(editText.getText().toString()));
+                    mapPresenter.initializeMap(Integer.valueOf(editText.getText().toString()));
 
-            }
-        }).start();
+                }
+            }).start();
+        }
 
         listFragment = (ListFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_collections);
         mapFragment = (MapFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_maps);
@@ -82,13 +84,15 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
                 & Integer.valueOf(editText.getText().toString()) <= Integer.MAX_VALUE) {
 
 
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    listPresenter.initialzeList(Integer.valueOf(editText.getText().toString()));
-                    mapPresenter.initializeMap(Integer.valueOf(editText.getText().toString()));
-                }
-            }).start();
+            synchronized (MainActivity.class) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        listPresenter.initialzeList(Integer.valueOf(editText.getText().toString()));
+                        mapPresenter.initializeMap(Integer.valueOf(editText.getText().toString()));
+                    }
+                }).start();
+            }
 
 
             listPresenter.setTvInsertAtBeginningArrayList();

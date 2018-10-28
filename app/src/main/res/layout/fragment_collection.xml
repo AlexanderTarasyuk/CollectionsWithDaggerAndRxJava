@@ -39,12 +39,8 @@
                 android:textSize="@dimen/tv" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/insert_at_the_middle"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/tv" />
+                style="@style/fragmentCollection" />
 
             <TextView
                 android:layout_width="match_parent"

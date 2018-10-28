@@ -5,32 +5,34 @@ import java.util.List;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 
-public class ObservableListModel<T> {
+public class ObservableListModel<Integer> {
 
-    protected  List<T> list;
-    protected  BehaviorSubject<List<T>> behaviorSubject;
 
-    public ObservableListModel(List<T> list) {
-        this.list = list;
+    protected  BehaviorSubject<List<Integer>> behaviorSubject;
+    protected List<Integer> list;
+
+    public ObservableListModel(List<Integer> list) {
+        this.list=list;
+
         this.behaviorSubject = BehaviorSubject.createDefault(list);
     }
 
-    public Observable<List<T>> getObservable() {
+    public Observable<List<Integer>> getObservable() {
         return behaviorSubject;
     }
 
-    public void addElement(int index, T element) {
+    public void addElement( int index, Integer element) {
         list.add(index, element);
         behaviorSubject.onNext(list);
     }
 
-    public void removeElement(int index) {
+    public void removeElement( int index) {
         list.remove(index);
         behaviorSubject.onNext(list);
 
     }
 
-    public void getIndexOfElementList(T value) {
+    public void getIndexOfElementList( Integer value) {
         list.indexOf(value);
         behaviorSubject.onNext(list);
     }

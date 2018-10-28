@@ -32,7 +32,7 @@ public final class ListDaoImpl implements Contract.ListDao {
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
-        observableListModel.addElement(1, 1);
+        observableListModel.addElement(0, 1);
 
         disposable.dispose();
 
@@ -91,7 +91,7 @@ public final class ListDaoImpl implements Contract.ListDao {
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
-        observableListModel.getIndexOfElementList(100);
+        observableListModel.getIndexOfElementList( 100);
         disposable.dispose();
 
         return String.valueOf(System.nanoTime() - temp);
@@ -108,7 +108,7 @@ public final class ListDaoImpl implements Contract.ListDao {
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
-        observableListModel.removeElement(0);
+        observableListModel.removeElement( 0);
 
         disposable.dispose();
 
@@ -144,7 +144,7 @@ public final class ListDaoImpl implements Contract.ListDao {
                 .observeOn(AndroidSchedulers.mainThread())
                 .toFlowable(BackpressureStrategy.BUFFER)
                 .subscribe();
-        observableListModel.removeElement(list.size() - 1);
+        observableListModel.removeElement( list.size() - 1);
 
         disposable.dispose();
 
